@@ -1,6 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 import AgilityClient from "./agility/agility-client"
 
+
 export default {
 	mode: 'universal',
 	/*
@@ -103,6 +104,10 @@ export default {
 		fallback: true,
 		routes: function () {
 
+			//if we are building this in SPA mode, don't need to get all the routes...
+			if (process.argv.includes("--spa")) return [];
+
+			//generate all the routes otherwise...
 			const agilityClient = new AgilityClient();
 			const api = agilityClient.client;
 

@@ -6,19 +6,24 @@ class AgilityClient {
 
 	constructor(context) {
 		this.config = agilityConfig;
-		this.client = this.createClient(context);
+		this.client = this.createClient();
+
+		this.context = context || null;
+
 	}
 
-	createClient(context) {
+	createClient() {
 
 		//check whether preview has been enabled via query string / local storage
-		this.checkPreviewModeAndLanguageCode(context);
+		this.checkPreviewModeAndLanguageCode();
 
 		//build the client
 		let apiKey = agilityConfig.fetchAPIKey;
 		if (agilityConfig.isPreview) {
 			apiKey = agilityConfig.previewAPIKey;
 		}
+
+		console.log("ispreview", agilityConfig.isPreview);
 
 		return agilityContentFetch.getApi({
 			guid: agilityConfig.guid,
@@ -33,18 +38,13 @@ class AgilityClient {
      *      
      * @memberof AgilityApp
      */
-	checkPreviewModeAndLanguageCode(context) {
+	checkPreviewModeAndLanguageCode() {
 
-		var query = null;
-		//TODO: handle previe mode...
-
-		if (context != undefined && context != null) {
-			//query = context.query;
-
+		if (process.server || process.static) {
+			return;
 		}
 
-		return;
-
+		console.log("on client");
 
 
 		//lang=en-us                --set the language code

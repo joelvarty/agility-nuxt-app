@@ -8,6 +8,7 @@
     "dev": "nuxt",
     "spa": "nuxt --spa",
     "build": "nuxt build",
+    "build-spa": "nuxt build --spa",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "generate-spa": "nuxt generate --spa",
@@ -15,8 +16,8 @@
   },
   "dependencies": {
     "@agility/content-fetch": "^0.5.0",
-    "nuxt": "^2.0.0",
     "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0",
     "truncate-html": "^1.0.2"
   },
   "devDependencies": {

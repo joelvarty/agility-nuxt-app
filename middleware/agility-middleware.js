@@ -13,7 +13,7 @@ export default async function (context) {
 	// 	dynamicPageItem: null
 	// };
 
-	const agilityClient = new AgilityClient();
+	const agilityClient = new AgilityClient(context);
 	Vue.prototype.$agility = agilityClient;
 
 	context.$agility = agilityClient;

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import AgilityComponents from '../agility.components'
+import AgilityComponents from "../agility.components";
 
 export default {
   props: {
@@ -26,7 +26,7 @@ export default {
       isPageNotFound: false,
       errorMessage: null,
       path: null
-    }
+    };
   },
   head() {
     return {
@@ -34,48 +34,48 @@ export default {
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
-          hid: 'description',
-          name: 'description',
+          hid: "description",
+          name: "description",
           content: this.page.seo.metaDescription
         }
       ]
-    }
+    };
   },
   computed: {
     sitemapFlat: function() {
-      return this.$store.state.agilityState.sitemapFlat
+      return this.$store.state.agilityState.sitemapFlat;
     },
     sitemapNested: function() {
-      return this.$store.state.agilityState.sitemapNested
+      return this.$store.state.agilityState.sitemapNested;
     },
     pageInSitemap: function() {
-      return this.$store.state.agilityState.pageInSitemap
+      return this.$store.state.agilityState.pageInSitemap;
     },
     page: function() {
-      return this.$store.state.agilityState.page
+      return this.$store.state.agilityState.page;
     },
     sharedContent: function() {
-      const sc = this.$store.state.agilityState.sharedContent
+      const sc = this.$store.state.agilityState.sharedContent;
 
-      return sc
+      return sc;
     },
     dynamicPageItem: function() {
-      return this.$store.state.agilityState.dynamicPageItem
+      return this.$store.state.agilityState.dynamicPageItem;
     },
     pageTemplateName: function() {
-      return this.page.templateName.replace(/[^0-9a-zA-Z]/g, '')
+      return this.page.templateName.replace(/[^0-9a-zA-Z]/g, "");
     },
     componentToRender: function() {
       const component =
-        AgilityComponents.pageTemplateComponents[this.pageTemplateName]
+        AgilityComponents.pageTemplateComponents[this.pageTemplateName];
 
-      return component
+      return component;
     }
   },
   asyncData: async function(context) {},
 
   handleError: function(msg, error) {
-    console.error(msg, error)
+    console.error(msg, error);
     this.setState({
       page: null,
       pageInSitemap: null,
@@ -83,12 +83,12 @@ export default {
       isError: true,
       isPageNotFound: false,
       errorMessage: msg
-    })
+    });
     if (
       this.props.onPageRoutingError &&
-      typeof this.props.onPageRoutingError === 'function'
+      typeof this.props.onPageRoutingError === "function"
     ) {
-      this.props.onPageRoutingError(msg, error)
+      this.props.onPageRoutingError(msg, error);
     }
   },
 
@@ -99,8 +99,8 @@ export default {
       loading: false,
       isError: false,
       isPageNotFound: true,
-      errorMessage: 'page NOT found in sitemap :('
-    })
+      errorMessage: "page NOT found in sitemap :("
+    });
 
     //TODO: handle page not found...
     // if (
@@ -110,5 +110,5 @@ export default {
     //   this.props.onPageNotFound(this.errorMessage);
     // }
   }
-}
+};
 </script>
