@@ -8,15 +8,21 @@
 # install dependencies
 $ npm run install
 
-# serve with hot reload at localhost:3000
+# serve in SSR (server side rendering) with hot reload at localhost:3000
 $ npm run dev
+
+#serve in SPA (single page application mode) with hot reload at localhost:3000
+$ npm run spa
 
 # build for production and launch server
 $ npm run build
 $ npm run start
 
-# generate static project
+# generate static project with everthing routed in server side mode
 $ npm run generate
+
+# generate static project using spa mode
+$ npm run generate-spa
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
