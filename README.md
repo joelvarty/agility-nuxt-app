@@ -1,4 +1,4 @@
-# agility-nuxt-1
+# Agility CMS + Nuxt.js
 
 > Nuxt.js project with Vuetify using [Agility CMS](https://agilitycms.com) for routing
 
