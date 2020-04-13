@@ -40,12 +40,15 @@ class AgilityClient {
      */
 	checkPreviewModeAndLanguageCode() {
 
+		//don't run this in server mode
 		if (process.server || process.static) {
 			return;
 		}
 
-		console.log("on client");
-
+		//don't run this in "generate" mode
+		if (process.argv.includes("generate")) {
+			return;
+		}
 
 		//lang=en-us                --set the language code
 		//agilitypreviewkey=xyz     --set previewMode = true
