@@ -25,4 +25,4 @@ $ npm run generate
 $ npm run generate-spa
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org) and [Agility CMS docs](https://help.agilitycms.com/hc/en-us/articles/360037500492)
