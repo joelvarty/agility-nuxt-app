@@ -63,7 +63,8 @@ export default {
       return this.$store.state.agilityState.dynamicPageItem;
     },
     pageTemplateName: function() {
-      return this.page.templateName.replace(/[^0-9a-zA-Z]/g, "");
+		if (! this.page.templateName) return null;
+		return this.page.templateName.replace(/[^0-9a-zA-Z]/g, "");
     },
     componentToRender: function() {
       const component =

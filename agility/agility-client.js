@@ -23,8 +23,6 @@ class AgilityClient {
 			apiKey = agilityConfig.previewAPIKey;
 		}
 
-		console.log("ispreview", agilityConfig.isPreview);
-
 		return agilityContentFetch.getApi({
 			guid: agilityConfig.guid,
 			apiKey: apiKey,
@@ -34,8 +32,8 @@ class AgilityClient {
 	}
 
     /**
-     * Check whether the site is in preview mode, and also set the language     
-     *      
+     * Check whether the site is in preview mode, and also set the language
+     *
      * @memberof AgilityApp
      */
 	checkPreviewModeAndLanguageCode() {
