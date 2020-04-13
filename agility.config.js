@@ -5,7 +5,7 @@ export default {
     previewAPIKey: 'defaultpreview.a10fd7f65e8f66a28df40a2aa2da46ed5d6f4780740b41287b1e6bc6f900977a', // set your preview apikey
     languageCode: 'en-us',
     channelName: 'website',
-    isPreview: false,
+    isPreview: true,
     caching: {
         maxAge: 0
     },

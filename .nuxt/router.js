@@ -5,6 +5,13 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _1707dbcc = () => interopDefault(import('../agility/AgilityPage.vue' /* webpackChunkName: "" */))
 
+// TODO: remove in Nuxt 3
+const emptyFn = () => {}
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) {
+  return originalPush.call(this, location, onComplete, onAbort)
+}
+
 Vue.use(Router)
 
 export const routerOptions = {
@@ -15,14 +22,14 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-      path: "*",
-      component: _1707dbcc,
-      name: "custom"
-    }],
+    path: "*",
+    component: _1707dbcc,
+    name: "custom"
+  }],
 
   fallback: false
 }
 
-export function createRouter() {
+export function createRouter () {
   return new Router(routerOptions)
 }
