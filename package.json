@@ -15,7 +15,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@agility/content-fetch": "^0.5.9",
+    "@agility/content-fetch": "^1.0.0",
     "@nuxtjs/axios": "^5.9.7",
     "nuxt": "^2.12.2",
     "truncate-html": "^1.0.2"
